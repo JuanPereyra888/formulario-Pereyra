@@ -1,0 +1,35 @@
+<div class="container">
+  <h2 class="titulo">Todo Formularios SRL</h2>
+<form [formGroup]="formularioLogin" class="was-validated">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input formControlName="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div class="valido" *ngIf="formularioLogin.controls['correo'].valid">
+        Campo Correcto
+      </div>
+      <div class="invalido" *ngIf="formularioLogin.controls['correo'].errors?.['required']">
+        El campo no puede estar vacio.
+      </div>
+      <div class="invalido" *ngIf="formularioLogin.controls['correo'].errors?.['pattern']">El campo correo debe tener mas de 6 caracteres.
+      </div>
+    </div>
+      <div id="emailHelp" class="form-text">Nunca compartiremos su correo con</div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input formControlName="contrasena" type="password" class="form-control" id="exampleInputPassword1">
+      <div class="valido" *ngIf="formularioLogin.controls['contrasena'].valid">
+        Campo Correcto
+      </div>
+      <div class="invalido" *ngIf="formularioLogin.controls['contrasena'].errors?.['required']">
+        El campo no puede estar vacio.
+      </div>
+      <div class="invalido" *ngIf="formularioLogin.controls['contrasena'].errors?.['minlength']">El campo contraseña debe tener mas de 6 caracteres.
+      </div>
+    </div>
+    <div class="mb-3 form-check">
+      <input formControlName="recordarCredencial" type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Recordar</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="login()">Iniciar Sesión</button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+.valido{
+    color: rgb(17, 227, 17);
+}
+.invalido{
+    color: rgb(181, 13, 13);
+}
+.container{
+    padding-top: 100px;
+    padding-bottom: 20px;
+    border: 10px ridge #e3e3e3;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+}
